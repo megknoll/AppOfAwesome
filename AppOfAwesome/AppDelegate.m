@@ -27,7 +27,7 @@
     [self.window makeKeyAndVisible];
     
     UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
-    colorView.backgroundColor = [UIColor yellowColor];
+    colorView.backgroundColor = [UIColor colorWithRed:60.0f/255.0f green:185.0f/255.0f blue:213.0f/255.0f alpha:1.0];
     colorTouchVC.view = colorView;
     
     NSLog(@"The screen is %f wide and %f tall",viewRect.size.width,viewRect.size.height);
