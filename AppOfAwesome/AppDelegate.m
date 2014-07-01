@@ -12,8 +12,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSLOG(@"Hello World");
-    // Override point for customization after application launch.
+    
+    //Get bounds of device screen
+    CGRect viewRect = [[UIScreen mainScreen] bounds];
+    
+    //Allocate memory and init window with the bounds of the screen
+    self.window = [[UIWindow alloc] initWithFrame:viewRect];
+    
+    //Allocate memory and init view controller and create pointer
+    UIViewController *colorTouchVC = [[UIViewController alloc] init];
+    //point our canvas-window contoller to the pointer
+    self.window.rootViewController = colorTouchVC;
+    //give access to all key and touch events
+    [self.window makeKeyAndVisible];
+    
+    UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
+    colorView.backgroundColor = [UIColor yellowColor];
+    colorTouchVC.view = colorView;
+    
+    NSLog(@"The screen is %f wide and %f tall",viewRect.size.width,viewRect.size.height);
+    
     return YES;
 }
 							
